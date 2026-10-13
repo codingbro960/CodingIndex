@@ -1,0 +1,259 @@
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(#0B1120, #111C35);
+    text-align: center;
+    margin: 0;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+.logo:hover {
+    transform: scale(1.15);
+    color: #00BCD4;
+    text-shadow: 0 5px 15px rgba(0, 188, 212, 0.5);
+}
+
+.logo i {
+    color: #00BCD4;
+    font-size: 26px;
+    transition: transform 0.3s ease;
+}
+
+/* HOVER PÅ IKONEN */
+.logo:hover i {
+    transform: scale(1.2);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #080D19;
+    padding: 15px 30px;
+    flex-wrap: wrap;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #F1F5F9;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #00BCD4;
+    transition: 2ms;
+}
+
+strong {
+    color: #FFFFFF;
+}
+
+.portfolio-icon {
+    font-size: 26px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+p {
+    color: #E2E8F0;
+}
+
+em {
+    color: #E2E8F0;
+    font-size: 25px;
+}
+
+h1 {
+    color: #FFFFFF;
+}
+
+.hero {
+    min-height: 500px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(#0B1120, #164E63, #111C35);
+}
+
+.hero-content {
+    max-width: 1000px;
+    padding: 40px;
+    margin: auto;
+}
+
+button {
+    padding: 20px 30px;
+    margin: 30px;
+    background-color: #00BCD4;
+    color: #FFFFFF;
+    font-weight: bold;
+    border-radius: 15px;
+}
+
+button:hover {
+    background-color: #0891B2;
+}
+
+.about {
+    background: linear-gradient(#111C35, #164E63);
+    padding: 50px;
+}
+
+.about-card {
+    display: flex;
+    align-items: center;
+    max-width: 1000px;
+    background: linear-gradient(#1E293B, #164E63);
+    padding: 40px;
+    margin: auto;
+    gap: 30px;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 30px rgba(0, 188, 212, 0.5);
+}
+
+.about img {
+    width: 45%;
+    max-width: 500px;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.skillcards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background: linear-gradient(#111C35, #164E63);
+    border-radius: 15px;
+}
+
+.skills-section {
+    padding: 60px 30px;
+    background: linear-gradient(#0B1120, #164E63, #111C35);
+}
+
+.skills-section h2 {
+    color: #FFFFFF;
+    font-size: 32px;
+    margin-bottom: 35px;
+}
+
+.card1 {
+    padding: 30px;
+    text-align: left;
+    background: linear-gradient(#1E293B, #164E63);
+    border: 1px solid #334155;
+    border-radius: 16px;
+    transition: 0.3s ease;
+}
+
+.card1:hover {
+    transform: translateY(-6px);
+    border-color: #00BCD4;
+    box-shadow: 0 10px 30px rgba(0, 188, 212, 0.2);
+}
+
+.card1 h3 {
+    color: #67E8F9;
+    font-size: 22px;
+    margin-top: 0;
+}
+
+.card1 p {
+    color: #CBD5E1;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #080D19;
+    color: #F1F5F9;
+    font-weight: bold;
+}
+
+
+/* Mobilanpassning för startsidan */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-content {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .about {
+        padding: 20px;
+    }
+
+    .about-card {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .about img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .skillcards {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    .card1 {
+        padding: 20px;
+    }
+
+    button {
+        max-width: 100%;
+    }
+}
