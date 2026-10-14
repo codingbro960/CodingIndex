@@ -1,15 +1,48 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #0B1120;
+    background: linear-gradient(#0B1120, #111C35);
     text-align: center;
     margin: 0;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+.logo:hover {
+    transform: scale(1.15);
+    color: #00BCD4;
+    text-shadow: 0 5px 15px rgba(0, 188, 212, 0.5);
+}
+
+.logo i {
+    color: #00BCD4;
+    font-size: 26px;
+    transition: transform 0.3s ease;
+}
+
+/* HOVER PÅ IKONEN */
+.logo:hover i {
+    transform: scale(1.2);
 }
 
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 30px;
+    align-items: center;
     background-color: #080D19;
+    padding: 15px 30px;
     flex-wrap: wrap;
 }
 
@@ -17,6 +50,7 @@ nav ul {
     list-style: none;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     padding: 0;
     margin: 0;
     gap: 20px;
@@ -28,19 +62,65 @@ nav a {
     font-weight: bold;
 }
 
+nav a:hover {
+    color: #00BCD4;
+    transition: 2ms;
+}
+
 strong {
     color: #FFFFFF;
-    font-weight: bold;
+}
+
+.portfolio-icon {
+    font-size: 26px;
+    margin-right: 8px;
+    vertical-align: middle;
 }
 
 p {
-    color: #CBD5E1;
+    color: #E2E8F0;
+}
+
+em {
+    color: #E2E8F0;
+    font-size: 25px;
+}
+
+h1 {
+    color: #FFFFFF;
+}
+
+.hero {
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(#0B1120, #164E63, #111C35);
+}
+
+.hero-content {
+    max-width: 1000px;
+    padding: 40px;
+    margin: auto;
+}
+
+button {
+    padding: 20px 30px;
+    margin: 30px;
+    background-color: #00BCD4;
+    color: #FFFFFF;
     font-weight: bold;
+    border-radius: 15px;
+}
+
+button:hover {
+    background-color: #0891B2;
 }
 
 .about {
-    background: linear-gradient(#0B1120, #164E63);
-    padding: 100px;
+    background: linear-gradient(#111C35, #164E63);
+    padding: 50px;
 }
 
 .about-card {
@@ -52,6 +132,12 @@ p {
     margin: auto;
     gap: 30px;
     border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 30px rgba(0, 188, 212, 0.5);
 }
 
 .about img {
@@ -61,9 +147,13 @@ p {
     object-fit: cover;
 }
 
+/* ==============================
+   MEDIA - SURFPLATTA OCH MOBIL
+============================== */
 
-/* Mobilanpassning för Om mig */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
+
+    /* NAVBAR */
     nav {
         flex-direction: column;
         gap: 15px;
@@ -71,18 +161,47 @@ p {
     }
 
     nav ul {
-        flex-wrap: wrap;
         justify-content: center;
+        flex-wrap: wrap;
         gap: 12px;
     }
 
+    nav a {
+        font-size: 14px;
+    }
+
+    /* LOGO */
+    .logo {
+        justify-content: center;
+        font-size: 22px;
+    }
+
+    /* HERO */
+    .hero {
+        min-height: auto;
+        padding: 20px 0;
+    }
+
+    .hero-content {
+        padding: 25px 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    em {
+        font-size: 21px;
+    }
+
+    /* ABOUT */
     .about {
-        padding: 20px;
+        padding: 30px 15px;
     }
 
     .about-card {
         flex-direction: column;
-        padding: 20px;
+        padding: 25px;
         gap: 20px;
     }
 
@@ -91,8 +210,9 @@ p {
         max-width: 100%;
     }
 
-    .about-text {
-        width: 100%;
+    button {
+        padding: 15px 20px;
+        margin: 20px 0;
+        max-width: 100%;
     }
 }
-
